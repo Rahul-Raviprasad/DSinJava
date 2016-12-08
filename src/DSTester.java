@@ -58,9 +58,13 @@ public class DSTester {
       // 1->7->6->4->NUllist
       llist.append(4);
       llist.deleteNode(1);
+      llist.deleteNodeAtposition(0);
 
       
       llist.printList();
+      
+      System.out.println(llist.getCount() + ": count of nodes in list");
+      
 		
 		
 	}
