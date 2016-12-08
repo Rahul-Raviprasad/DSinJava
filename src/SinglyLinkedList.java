@@ -118,4 +118,40 @@ public class SinglyLinkedList {
 		}
 		return count;
 	}
+	//recursive implementation of the same method as above
+	public int getCountRec(Node node) {
+		// Base case
+		if (node == null)
+			return 0;
+		// Count is this node plus rest of the list
+	    return 1 + getCountRec(node.next);
+	}
+	
+	//Checks whether the value x is present in linked list
+    public boolean search(Node head, int x) {
+        Node current = head;    //Initialize current
+        while (current != null) {
+            if (current.data == x)
+                return true;    //data found
+            current = current.next;
+        }
+        return false;   //data not found
+    }
+    
+    /* Function to print middle of linked list.
+     * In case of even number of elements it prints the second of the 2 middle numbers */
+    void printMiddle() {
+        Node slow_ptr = head;
+        Node fast_ptr = head;
+        if (head != null)
+        {
+            while (fast_ptr != null && fast_ptr.next != null)
+            {
+                fast_ptr = fast_ptr.next.next;
+                slow_ptr = slow_ptr.next;
+            }
+            System.out.println("The middle element is [" +
+                                slow_ptr.data + "] \n");
+        }
+    }
 }
