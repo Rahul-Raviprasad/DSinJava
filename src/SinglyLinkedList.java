@@ -53,4 +53,23 @@ public class SinglyLinkedList {
 		last.next = newNode;
 		return;
 	}
+	
+	// given a particular key, it deletes the first occurrence of the key  in the linked list
+	public void deleteNode(int key) {
+		Node temp = head, prev = null;
+		if(temp != null && temp.data == key) {
+			head = temp.next; // change the head since head has the key
+			return;
+		}
+		//search for the key while incrementing the pointer to current and prev node
+		while(temp.next != null && temp.data != key) {
+			prev = temp;
+			temp = temp.next;
+		}
+		// If key was not present in list
+		if(temp == null) return;
+		
+		//Unlink
+		prev.next = temp.next; //this is where the deletion is happening 
+	}
 }

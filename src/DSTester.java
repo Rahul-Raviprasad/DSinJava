@@ -57,6 +57,7 @@ public class DSTester {
       // Insert 4 at the end. So linked list becomes
       // 1->7->6->4->NUllist
       llist.append(4);
+      llist.deleteNode(1);
 
       
       llist.printList();
