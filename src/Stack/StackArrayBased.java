@@ -48,10 +48,37 @@ public class StackArrayBased {
     		throw new Exception("Stack is empty exception. pop not possible");
     	}
     	data = stack[top];
-    	stack[top--] = Integer.MIN_VALUE; // at current top index value is set to interger min and then top reduced
+    	stack[top--] = Integer.MIN_VALUE; 
+    	// at current top index value is set to interger min and then top reduced
     	return data;
     }
     
+    
+    // return a string representation of the stack as a list. O(n) time complexity
+    public String toString() {
+    	String s;
+    	s = "[";
+    	if(size() > 0)
+    		s += stack[0];
+    	if(size() > 1) {
+    		for(int i = 1; i < size(); i++) {
+    			s += ", " + stack[i];
+    		}
+    	}
+    	return s + "]";
+    }
+    
+    public static void main(String[] args) throws Exception {
+    	StackArrayBased myStack = new StackArrayBased();
+    	System.out.println(myStack.toString());
+    	myStack.push(10);
+    	myStack.push(20);
+    	System.out.println(myStack.toString());
+    	myStack.pop();
+    	System.out.println(myStack.toString());
+    	
+    	
+    }
     
 	
 }
